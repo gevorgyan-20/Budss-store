@@ -154,9 +154,9 @@ body {
                     padding-left: 10px;
                 }
             }
-            & .form_incor_text, .form_incor_mainText {
+            & .form_incor_text1, .form_incor_text2, .form_incor_mainText {
                 border: none !important;
-                color: red;
+                color: red ;
                 display: none;
             }
         }

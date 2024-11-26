@@ -100,6 +100,7 @@ const openForm = () => {
 
 const formSubmit = (e) => {
     e.preventDefault()
+    const phoneRegex = /^\+7\s?\d{0,10}$/;
 
     let correctInput = true;
 
@@ -114,6 +115,15 @@ const formSubmit = (e) => {
             mainText.classList.add('incorrect_input')
         } 
     }
+
+    if(e.target[2].value !== '') {
+        if (phoneRegex.test(e.target[2].value)) {
+            e.target[2].nextElementSibling.nextElementSibling.classList.remove('incorrect_input')        
+        } else {
+            e.target[2].nextElementSibling.nextElementSibling.classList.add('incorrect_input')
+        }
+    }
+
 
     if(correctInput) {
         const isCorrectBlock = document.querySelector('.filled_form_block')
